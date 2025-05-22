@@ -1,7 +1,8 @@
-package com.gepetinho_20.controller.whatsapp.client
+package com.gepetinho_20.client.whatsapp.config
 
 import feign.RequestInterceptor
 import feign.RequestTemplate
+import feign.codec.ErrorDecoder
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 
@@ -15,5 +16,10 @@ class WhatsAppClientConfig {
             template!!.header("Content-Type", "application/json")
             template.header("Authorization", whatsToken)
         }
+    }
+
+    @Bean
+    fun errorDecoder(): ErrorDecoder {
+        return WhatsappErrorDecoder()
     }
 }

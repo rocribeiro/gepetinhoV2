@@ -1,6 +1,6 @@
 package com.gepetinho_20.service
 
-import com.gepetinho_20.controller.chatgpt.client.GptClient
+import com.gepetinho_20.client.chatgpt.GptClient
 import com.gepetinho_20.model.Gpt
 import com.gepetinho_20.model.MessageData
 import org.springframework.beans.factory.annotation.Value
@@ -22,13 +22,12 @@ class GptService(
         )
 
         val gptResponse = gptClient.sendMessage(gptBody)
-        val gptReply = gptResponse?.choices?.firstOrNull()?.message?.content
+        val gptReply = gptResponse.choices.firstOrNull()?.message?.content
 
-        return if (gptReply.isNullOrBlank()) {
+        return (if (gptReply.isNullOrBlank()) {
             logger.warn("Resposta do GPT vazia para a mensagem: $userMessage")
-            null
         } else {
             gptReply
-        }
+        }) as String
     }
 }

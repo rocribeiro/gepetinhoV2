@@ -1,4 +1,4 @@
-package com.gepetinho_20.controller.whatsapp
+package com.gepetinho_20.controller.response
 
 import com.gepetinho_20.model.Text
 
@@ -9,7 +9,7 @@ data class Entry(
     val changes: List<Change>
 )
 data class Change(
-    val value: Value?
+    val value: Value
 )
 data class Value(
     val messages: List<Message>

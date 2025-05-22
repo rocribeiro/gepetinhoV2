@@ -1,6 +1,6 @@
 package com.gepetinho_20.service
 
-import com.gepetinho_20.controller.whatsapp.WhatsAppWebhookResponse
+import com.gepetinho_20.controller.response.WhatsAppWebhookResponse
 import org.springframework.stereotype.Service
 
 @Service

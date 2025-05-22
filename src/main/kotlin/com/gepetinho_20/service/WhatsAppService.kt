@@ -1,15 +1,17 @@
 package com.gepetinho_20.service
 
 import com.gepetinho_20.model.MessageInfo
-import com.gepetinho_20.controller.whatsapp.WhatsAppWebhookResponse
-import com.gepetinho_20.controller.whatsapp.client.WhatsAppClient
+import com.gepetinho_20.controller.response.WhatsAppWebhookResponse
+import com.gepetinho_20.client.whatsapp.WhatsAppClient
 import com.gepetinho_20.model.Text
 import com.gepetinho_20.model.WhatsApp
 import org.springframework.stereotype.Service
 import org.slf4j.LoggerFactory
 
 @Service
-class WhatsAppService(private val whatsAppClient: WhatsAppClient) {
+class WhatsAppService(
+    private val whatsAppClient: WhatsAppClient
+) {
 
     private val logger = LoggerFactory.getLogger(WhatsAppService::class.java)
 
