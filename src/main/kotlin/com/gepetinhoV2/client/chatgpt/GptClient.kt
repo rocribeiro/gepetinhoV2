@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping
 
 @FeignClient(
     name = "gptClient",
-    url = "\${gpt.mesage.request.url}",
+    url = "\${gpt.message.request.url}",
     configuration = [GptClientConfig::class])
 
 interface GptClient {
